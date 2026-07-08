@@ -1,0 +1,13 @@
+{
+  "name": "Momentum — Produtividade",
+  "short_name": "Momentum",
+  "description": "Tarefas, cronómetro e acompanhamento de produtividade.",
+  "lang": "pt",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#eef1f6",
+  "theme_color": "#eef1f6",
+  "categories": ["productivity", "utilities"]
+}
