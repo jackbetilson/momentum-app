@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#eef1f6">
+  <title>Momentum</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand-mark">M</div>
+      <div>
+        <h1>Momentum</h1>
+        <p>Foco, tarefas e progresso</p>
+      </div>
+      <button id="themeBtn" class="icon-btn" aria-label="Mudar tema">◐</button>
+    </header>
+
+    <nav class="tabs" aria-label="Navegação principal">
+      <button class="tab active" data-page="today">Hoje</button>
+      <button class="tab" data-page="focus">Foco</button>
+      <button class="tab" data-page="progress">Progresso</button>
+    </nav>
+
+    <section id="today" class="page active">
+      <article class="card hero-card">
+        <span class="eyebrow">Plano diário</span>
+        <h2>O que queres concluir hoje?</h2>
+        <form id="taskForm" class="task-form">
+          <input id="taskInput" type="text" maxlength="80" placeholder="Adicionar uma tarefa" required>
+          <input id="minutesInput" type="number" min="1" max="240" value="25" aria-label="Minutos">
+          <button class="primary-btn" type="submit">Adicionar</button>
+        </form>
+      </article>
+
+      <article class="card">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Tarefas</span>
+            <h2>A tua lista</h2>
+          </div>
+          <span id="taskCounter" class="pill">0 abertas</span>
+        </div>
+        <div id="taskList" class="task-list"></div>
+      </article>
+    </section>
+
+    <section id="focus" class="page">
+      <article class="card timer-card">
+        <span class="eyebrow">Sessão atual</span>
+        <h2 id="activeTaskName">Escolhe uma tarefa</h2>
+        <p id="activeTaskMeta" class="muted">O temporizador ficará ligado à tarefa selecionada.</p>
+        <div class="timer-ring">
+          <div id="timeDisplay" class="time-display">25:00</div>
+          <span id="timerState">Pronto</span>
+        </div>
+        <div class="timer-actions">
+          <button id="startPauseBtn" class="primary-btn" disabled>Iniciar</button>
+          <button id="resetBtn" class="secondary-btn" disabled>Repor</button>
+          <button id="finishBtn" class="success-btn" disabled>Concluir</button>
+        </div>
+      </article>
+    </section>
+
+    <section id="progress" class="page">
+      <div class="stats-grid">
+        <article class="stat-card"><span>Concluídas</span><strong id="doneStat">0</strong></article>
+        <article class="stat-card"><span>Minutos de foco</span><strong id="focusStat">0</strong></article>
+        <article class="stat-card"><span>Sequência</span><strong id="streakStat">0</strong></article>
+      </div>
+      <article class="card">
+        <div class="section-head">
+          <div><span class="eyebrow">Histórico</span><h2>Últimas sessões</h2></div>
+          <button id="clearHistoryBtn" class="text-btn">Limpar</button>
+        </div>
+        <div id="historyList" class="history-list"></div>
+      </article>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
