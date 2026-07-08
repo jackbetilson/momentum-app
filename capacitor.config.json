@@ -1,0 +1,10 @@
+{
+  "appId": "com.momentum.productivity",
+  "appName": "Momentum",
+  "webDir": "www",
+  "backgroundColor": "#eef1f6",
+  "android": {
+    "allowMixedContent": false,
+    "backgroundColor": "#eef1f6"
+  }
+}
